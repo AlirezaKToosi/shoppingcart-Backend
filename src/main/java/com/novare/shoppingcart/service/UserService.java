@@ -12,7 +12,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    private BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();
+    private final BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();
 
     public User getUserByEmail(String email) {
         return userRepository.findByEmail(email);

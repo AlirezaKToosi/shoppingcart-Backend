@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public interface ImageService {
-    public Image create(Image image);
-    public List<Image> viewAll();
-    public Image viewById(long id);
+    Image create(Image image);
+    List<Image> viewAll();
+    Image viewById(long id);
 }

@@ -19,7 +19,7 @@ public class User {
     @Column(nullable = false)
     private String hashPassword;
     @OneToMany(mappedBy = "user")
-    private List<TodoItem> todoItems = new ArrayList<>();
+    private final List<TodoItem> todoItems = new ArrayList<>();
 
     public User() {
     }

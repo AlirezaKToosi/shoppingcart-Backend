@@ -16,7 +16,7 @@ import java.util.Map;
 public class AuthController {
     @Autowired
     private UserService userService;
-    private BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();
+    private final BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();
     @PostMapping("/signup")
     public ResponseEntity<?> signUp(@RequestBody Map<String, String> requestBody) {
         String email = requestBody.get("email");

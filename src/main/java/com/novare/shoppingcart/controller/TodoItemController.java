@@ -8,26 +8,18 @@ import com.novare.shoppingcart.model.User;
 import com.novare.shoppingcart.service.ImageService;
 import com.novare.shoppingcart.service.TodoItemService;
 import com.novare.shoppingcart.service.UserService;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.sql.rowset.serial.SerialException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 
@@ -49,7 +41,7 @@ public class TodoItemController {
     public ResponseEntity<byte[]> displayImage(@RequestParam("id") long id) throws IOException, SQLException
     {
         Image image = imageService.viewById(id);
-        byte [] imageBytes = null;
+        byte [] imageBytes;
         imageBytes = image.getImage().getBytes(1,(int) image.getImage().length());
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
     }
