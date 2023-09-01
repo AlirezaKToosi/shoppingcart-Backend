@@ -31,7 +31,7 @@ Before you can run the Eika Backend, make sure you have the following prerequisi
 1. Open a terminal in the ShoppingCard-Backend folder. 
 2. Build the project using Maven 
 3. Run the backend application using the following command:
-4. java -jar Shoppingvard.jar 
+4. java -jar ShoppingCart.jar 
 5. Running the app at http://localhost:8080.
 
 ## Document
